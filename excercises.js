@@ -40,50 +40,68 @@ function isVowel(char){
 // Write a function translate() that will translate a text into "rÃ¶varsprÃ¥ket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
 // ---------------------
 
-function rovarspraket(phrase){
-    var consonant = [b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z];
-    if phrase =
-}
+  function rovarspraket(phrase){
+      var newString = "";
+        for(var i = 0; i < phrase.length; i++){
+      if (!isVowel(phrase[i]) && phrase[i] !== " "){
+     newString = newString + phrase[i] + 'o' + phrase[i];
+      } else {
+        newString += phrase[i];
+      }
+    }
+      return newString;
+};
 
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
 // ---------------------
 
-function sum(int arr[]){
-//   var sum = arr[].reduce(function(a, b){
-//    return a + b;
-//  });
-// }
+function sum(array){
+  return array.reduce(function(a, b){
+   return a + b;
+ });
+}
 
-function multiply(){
-    //...
+function multiply(array){
+    return array.reduce(function(a, b){
+      return a * b;
+    })
 }
 
 // ---------------------
 // Define a function reverse() that computes the reversal of a string. For example, reverse("jag testar") should return the string "ratset gaj".
 // ---------------------
 
-function reverse(){
-//     var str = '';
-//     for (var i = this.length -1; i >= 0; i--){
-//      str += this[i];
-// };
-//   return str;
+function reverse(phrase){
+    var str = '';
+    for (var i = phrase.length -1; i >= 0; i--){
+     str += phrase[i];
+};
+return str;
 }
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
 
 function findLongestWord(words){
-    //...
-}
-
+    var lgth = 0;
+    var longest;
+    for (var i = 0; i < words.length; i++){
+      if (words[i].length > lgth){
+        lgth = words[i].length;
+        longest = words[i];
+      }
+    }
+    return longest;
+  }
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
 
 function filterLongWords(words, i){
-    //...
+      return words.filter(function(word){
+    return (word.length > i);
+});
 }
 
 // ---------------------
@@ -91,5 +109,15 @@ function filterLongWords(words, i){
 // ---------------------
 
 function charFreq(string){
-    //...
-}
+    var newObj = {};
+    for (var i =0; i < string.length; i++) {
+      if (newObj.hasOwnProperty(string[i])) {
+        newObj[string[i]] = newObj[string[i]] + 1;
+      } else {
+        newObj[string[i]] = 1;
+      }
+    }
+    return newObj;
+  }
+console.log(charFreq('adadadadadadadadb'));
+{ a: 8, d: 8, b: 1 }
