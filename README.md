@@ -1,1 +1,3 @@
-read me for assignment part 2.
+# Assignment 7b
+
+This assignment is to practice writing javascript functions.

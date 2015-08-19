@@ -24,6 +24,10 @@ function maxOfThree(x, y, z){
     }
 }
 
+//or
+
+// Math.max(x, y, z);
+
 // ---------------------
 // Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 // ---------------------
@@ -35,6 +39,16 @@ function isVowel(char){
       return false;
     };
 }
+
+// or
+
+// var vowels = 'aeiou';
+// return vowels.indexOf(char);
+// if(vowels.indexOf(char) !== -1){
+//   return true;
+// }
+// return false;
+// }
 
 // ---------------------
 // Write a function translate() that will translate a text into "rÃ¶varsprÃ¥ket". That is, double every consonant and place an occurrence of "o" in between. For example, translate("this is fun") should return the string "tothohisos isos fofunon".
@@ -51,6 +65,25 @@ function isVowel(char){
     }
       return newString;
 };
+console.log(rovarspraket("this is fun"));
+
+// or
+
+function rovarspraket(phrase){
+
+  function rovarspraket(phrase){
+      var newString = "";
+        for(var i = 0; i < phrase.length; i++){
+      if (!isVowel(phrase[i]) && phrase[i] !== " "){
+     newString = newString + phrase[i] + 'o' + phrase[i];
+      } else {
+        newString += phrase[i];
+      }
+    }
+      return newString;
+};
+//
+// console.log(rovarspraket('this is fun'));
 
 // ---------------------
 // Define a function sum() and a function multiply() that sums and multiplies (respectively) all the numbers in an array of numbers. For example, sum([1,2,3,4]) should return 10, and multiply([1,2,3,4]) should return 24.
@@ -79,6 +112,12 @@ function reverse(phrase){
 };
 return str;
 }
+
+//or
+// function reverse(phrase){
+// return str.split('').reverse().join('');
+// };
+
 // ---------------------
 // Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
 // ---------------------
@@ -94,6 +133,19 @@ function findLongestWord(words){
     }
     return longest;
   }
+
+// or
+
+//   function findLongestWord(words){
+//     var max = '';
+//   words.forEach(function(word){
+//     if (word.length > max.length) {
+//       max = word;
+//     }
+//   });
+//   return max;
+// }
+
 // ---------------------
 // Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
 // ---------------------
@@ -121,3 +173,16 @@ function charFreq(string){
   }
 console.log(charFreq('adadadadadadadadb'));
 { a: 8, d: 8, b: 1 }
+
+//or
+
+// function charFreq(string){
+//     var newObj = {};
+//
+//     string.split('').forEach(function(char){
+//       if (newObj[char]) {
+//       newObj[char]+= 1;
+//     }
+//     });
+//     return newObj;
+//   }
